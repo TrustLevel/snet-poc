@@ -1,0 +1,4 @@
+.DS_Store
+snet-deamon-build/
+volumes/etcd-data/data/
+volumes/snet-config/

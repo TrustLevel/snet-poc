@@ -1,0 +1,17 @@
+{
+    "blockchain_enabled": true,
+    "blockchain_network_selected": "goerli",
+    "daemon_end_point": "0.0.0.0:7001",
+    "daemon_group_name": "default_groups",
+    "ipfs_end_point": "http://ipfs.singularitynet.io:80",
+    "organization_id": "trustlevel-org-id-2",
+    "service_id": "trustlevel-service-3",
+    "passthrough_enabled": true,
+    "passthrough_endpoint": "http://grpc-server:8010",
+    "payment_channel_cert_path": "/var/lib/etcd/cfssl/client.pem",
+    "payment_channel_ca_path": "/var/lib/etcd/cfssl/ca.pem",
+    "payment_channel_key_path": "/var/lib/etcd/cfssl/client-key.pem",
+    "metering_enabled": false,
+    "log": {"level": "debug", "output": {"type": "stdout"}}
+  }
+  

@@ -1,0 +1,22 @@
+syntax = "proto3";
+ 
+package example;
+ 
+// Creating a structure for the request
+message Query {
+    string query = 1;
+    bool _type = 2;
+}
+ 
+// Creating a structure for the response
+message Answer {
+    string answer = 1;
+    string answer2 = 2;
+    string answer3 = 3;
+}
+ 
+// Service definition
+service Example {
+    // The signature of the called main method
+    rpc call(Query) returns (Answer) {}
+}

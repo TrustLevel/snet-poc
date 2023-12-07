@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  etcd:
+    image: bitnami/etcd:3.5.10-debian-11-r2
+    platform: linux/arm64
+    volumes:
+      - ./volumes/etcd-data:/bitnami/etcd
+    environment:
+      ETCD_DATA_DIR: /bitnami/etcd/data
+      ETCD_ENABLE_V2: "true"
+      ALLOW_NONE_AUTHENTICATION: "yes"
+    ports:
+      - "2379:2379"
+
+  snet-cli:
+    build:
+      context: ./docker/snet-cli
+    volumes:
+      - ./volumes/snet-config:/root/.snet
+      - ./volumes/snet-cli-data:/data
+      - ./docker/grpc-service/src:/app/src
+    entrypoint: []
+    command: tail -f /dev/null
+
+  snetd:
+    platform: linux/amd64
+    build:
+      context: ./docker/snetd
+    volumes:
+      - ./volumes/snetd-config/snetd.config.json:/app/snetd.config.json
+    command: 
+      - ./snetd
+      - -c
+      - /app/snetd.config.json
+    ports:
+      - "7001:7001"
+    depends_on:
+      - etcd
+  
+  grpc-server:
+    build:
+      context: ./docker/grpc-service
+    ports:
+      - "8010:8010"
+    depends_on:
+      - snetd

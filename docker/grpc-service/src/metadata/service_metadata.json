@@ -1,0 +1,31 @@
+{
+    "version": 1,
+    "display_name": "trustlevel-service-3",
+    "encoding": "proto",
+    "service_type": "grpc",
+    "model_ipfs_hash": "QmbSRxBwcDjqBJASfrNYYAhG7nfbRgb4WbC3TWNtDbTkLn",
+    "mpe_address": "0x6245F856EFFBDB3ED6a3c64385b27A78B42F65e1",
+    "groups": [
+        {
+            "group_name": "default_groups",
+            "endpoints": [
+                "http://snetd:7001"
+            ],
+            "pricing": [
+                {
+                    "price_model": "fixed_price",
+                    "price_in_cogs": 1,
+                    "default": true
+                }
+            ],
+            "group_id": "oIQ20xYp3P/z1osrQm7UnsIsHrgVkWtMTLSTlBHZA2w="
+        }
+    ],
+    "assets": {},
+    "media": [],
+    "tags": [],
+    "service_description": {
+        "description": "Description of my Service.",
+        "url": "https://www.trustlevel.io/"
+    }
+}
