@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "display_name": "trustlevel-service-3",
+    "display_name": "trustlevel-service-4",
     "encoding": "proto",
     "service_type": "grpc",
     "model_ipfs_hash": "QmbSRxBwcDjqBJASfrNYYAhG7nfbRgb4WbC3TWNtDbTkLn",
@@ -14,7 +14,7 @@
             "pricing": [
                 {
                     "price_model": "fixed_price",
-                    "price_in_cogs": 1,
+                    "price_in_cogs": 50000000,
                     "default": true
                 }
             ],
