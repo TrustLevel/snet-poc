@@ -85,8 +85,12 @@ docker-compose exec snet-cli snet channel open-init trustlevel-org-id-2 default_
 docker-compose exec snet-cli snet client call trustlevel-org-id-2 trustlevel-service-4 default_groups call '{"query":"Hello Josch"}'
 
 # Claim payments https://docs.google.com/document/d/1jkkIMvUObSc81Cv3WXl9wtjFwt-itFSaOctyGdPg_30/edit#heading=h.r684e4ffzwng
-# Does not seem to have an effect in the recipients wallet (which would have been expected)
 docker-compose exec snet-cli snet treasurer claim-all --endpoint http://snetd:7001
+
+docker-compose exec snet-cli snet account balance
+
+# Withdraw money from MPE into Wallet
+docker-compose exec snet-cli snet account withdraw <AMOUNT>
 
 # Client close channels: https://docs.google.com/document/d/1jkkIMvUObSc81Cv3WXl9wtjFwt-itFSaOctyGdPg_30/edit#heading=h.y464yvlwwaa4
 docker-compose exec snet-cli snet channel claim-timeout-all
